@@ -26,4 +26,4 @@ WORKDIR /app/mealie-mcp-server
 
 # The entrypoint will use mcp-proxy to run the server
 ENTRYPOINT ["mcp-proxy", "--sse-port", "9000", "--"]
-CMD ["uv", "run", "python", "src/server.py"]
+CMD ["uv", "run", "src/server.py"]
