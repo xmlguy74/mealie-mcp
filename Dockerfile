@@ -21,8 +21,9 @@ RUN git clone https://github.com/rldiao/mealie-mcp-server.git
 WORKDIR /app/mealie-mcp-server
 RUN uv sync
 
-# Set the working directory for runtime
-WORKDIR /app/mealie-mcp-server
+# Environment variables for Mealie connection (set at runtime)
+ENV MEALIE_BASE_URL=""
+ENV MEALIE_API_KEY=""
 
 # The entrypoint will use mcp-proxy to run the server
 ENTRYPOINT ["mcp-proxy", "--sse-port", "9000", "--"]
