@@ -22,4 +22,4 @@ WORKDIR /app/mealie-mcp-server
 RUN uv sync
 
 # The entrypoint will use mcp-proxy to run the server
-ENTRYPOINT ["catatonit", "--", "mcp-proxy"]
+CMD ["--pass-environment", "--host=0.0.0.0", "--port=9000", "uv", "run", "src/server.py"]
