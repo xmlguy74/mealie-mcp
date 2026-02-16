@@ -7,6 +7,6 @@ services:
       - "9000:9000"
     environment:
       # Mealie MCP server configuration
-      - MEALIE_URL=${MEALIE_URL:-http://localhost:9000}
+      - MEALIE_BASE_URL=${MEALIE_BASE_URL:-}
       - MEALIE_API_KEY=${MEALIE_API_KEY:-}
     restart: unless-stopped
