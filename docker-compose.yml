@@ -10,3 +10,4 @@ services:
       MEALIE_BASE_URL: ${MEALIE_BASE_URL}
       MEALIE_API_KEY: ${MEALIE_API_KEY}
     restart: unless-stopped
+    command: "--pass-environment --port=9000 --host 0.0.0.0 uv run src/server.py"
