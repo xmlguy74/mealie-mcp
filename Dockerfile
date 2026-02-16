@@ -3,11 +3,11 @@ FROM ghcr.io/sparfenyuk/mcp-proxy:latest
 
 # Install dependencies needed for uv and git
 USER root
-RUN apt-get update && apt-get install -y \
+RUN apk add --no-cache \
     curl \
     git \
     ca-certificates \
-    && rm -rf /var/lib/apt/lists/*
+    bash
 
 # Install uv
 RUN curl -LsSf https://astral.sh/uv/install.sh | sh
